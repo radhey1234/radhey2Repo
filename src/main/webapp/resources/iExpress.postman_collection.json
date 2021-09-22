@@ -1,0 +1,2770 @@
+{
+	"info": {
+		"_postman_id": "9dcf21db-7f30-d177-1d3d-4d22a01aa604",
+		"name": "iExpress",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WEB-Sign Up",
+			"item": [
+				{
+					"name": "[WEB] signup : Phone Number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4477779999\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"WEB\",\n\t\"deviceToken\":\"1234567899\",\n\t\"fullName\":\"S P\",\n\t\"dob\":\"25-12-1991\",\n\t\"cityId\":\"753\",\n\t\"city\":\"IncasecityIdisnotPresent\",\n\t\"stateId\":\"1\",\n\t\"state\":\"IncasecityIdnotpresent\",\n\t\"inputType\":\"Phone\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/signup",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"signup"
+							]
+						},
+						"description": "inputType : Email, Phone, FB, Twitter"
+					},
+					"response": [
+						{
+							"name": "signup: with verifiedMobileOrEmailToken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4412345999\",\n\t\"email\":\"sp.sendmail+9@gmail.com\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"WEB\",\n\t\"deviceToken\":\"123456789\",\n\t\"city\":\"Rewa\",\n\t\"state\":\"MP\",\n\t\"fullName\":\"S P\",\n\t\"dob\":\"25-12-1991\",\n\t\"inputType\":\"Phone\",\n\t\"verifiedMobileOrEmailToken\":\"e68c1c81-3a1f-4df4-8d70-9bbcd397af07\"\n}"
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/signup",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Jan 2020 19:20:26 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"userId\": 10,\n        \"email\": null,\n        \"phoneNumber\": \"4412345999\",\n        \"authenticationHeader\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEwLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ZmhteFIvVzlLTXRoMmxnL1FHYUN1b3pXeXVhMzA2eVczLmVDQmlGajh1d3YvMWJJd0pmSyIsImNyZWF0ZWQiOjE1Nzk2MzQ0MjY5ODUsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNDU2Nzg5IiwiREVWSUNFX0lEIjoxMX0.aLZVESefsYg_PpCSLxtwiYK8h-6pGIDuZkxqC9N0z2Apj_v6miw3iIldWjwkuhnKEnrFlc3IinyL3kcxE948Fw\",\n        \"profile\": {\n            \"firstName\": \"S\",\n            \"lastName\": \"P\",\n            \"city\": \"Rewa\",\n            \"state\": \"MP\",\n            \"profileUrl\": null,\n            \"profileBio\": null,\n            \"userName\": \"S P\",\n            \"dob\": \"25-12-1991\"\n        }\n    },\n    \"message\": \"Sign up successful !\",\n    \"timeStamp\": 1579634426994,\n    \"code\": 200,\n    \"errors\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "[WEB] signup : Email ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"91anu.sandeep+4@gmail.com\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"WEB\",\n\t\"deviceToken\":\"111111111\",\n\t\"fullName\":\"S4 P4\",\n\t\"dob\":\"25-12-1991\",\n\t\"cityId\":\"753\",\n\t\"city\":\"IncasecityIdisnotPresent\",\n\t\"stateId\":\"1\",\n\t\"state\":\"IncasecityIdnotpresent\",\n\t\"inputType\":\"Email\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/signup",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mobile- Sign Up",
+			"item": [
+				{
+					"name": "[Mobile] Sign up : Phone Number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4444448888\",\n\t\"inputType\":\"Phone\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"register"
+							]
+						},
+						"description": "Register Phone number "
+					},
+					"response": [
+						{
+							"name": "[Mobile] Sign up : Phone Number",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4412345999\",\n\t\"inputType\":\"Phone\"\n}"
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/register",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 16 May 2020 20:09:14 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"verificationKey\": \"76d2c602-393b-4be7-a0de-bfcd339e4c9e\"\n    },\n    \"message\": \"Please verify your number, we sent you OTP !\",\n    \"timeStamp\": 1589659754491,\n    \"code\": 200,\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Sign up : Register Mobile [For Mobile Screen]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4412345888\",\n\t\"inputType\":\"Phone\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/register",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Feb 2020 17:09:12 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"message\": \"Please verify your number, we sent you OTP !\",\n    \"timeStamp\": 1580922552828,\n    \"code\": 200,\n    \"errors\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "[Mobile] Sign up : Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"sp.sendmail@gmail.com\",\n\t\"inputType\":\"Email\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"register"
+							]
+						},
+						"description": "User starts registration with email"
+					},
+					"response": [
+						{
+							"name": "Sign up : Register via Email [Mobile Screen]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\":\"sp.sendmail@gmail.com\",\n\t\"inputType\":\"Email\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/register",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Feb 2020 17:10:44 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"message\": \"Please verify your email, we sent you OTP !\",\n    \"timeStamp\": 1580922644180,\n    \"code\": 200,\n    \"errors\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "[Mobile] sign up : final Call to register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fullName\":\"Sandeep Pandey\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"IOS\",\n\t\"deviceToken\":\"123456789\",\n\t\"inputType\":\"Phone\",\n\t\"verifiedMobileOrEmailToken\":\"6300d955-35c7-464a-a075-9a6789299e96\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/signup",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"signup"
+							]
+						},
+						"description": "This will register User as signed up user in app.\n\n\t\"inputType\":\"Email\" Or \t\"inputType\":\"Phone\""
+					},
+					"response": [
+						{
+							"name": "Sign Up : Mobile Screen",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"password\":\"Test\",\n\t\"deviceType\":\"IOS\",\n\t\"deviceToken\":\"123456789\",\n\t\"inputType\":\"Email\",\n\t\"verifiedMobileOrEmailToken\":\"c8d8c995-205e-4f03-8ee2-e6212fdd3312\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/signup",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Feb 2020 04:13:25 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"userId\": 30,\n        \"email\": \"sp.sendmail@gmail.com\",\n        \"phoneNumber\": null,\n        \"authenticationHeader\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjMwLCJhdWRpZW5jZSI6IiQyYSQxMCRYRDlWNzJDWHJUMmY5cEJNajZhVmYuZWw0YTNmWlFyZ2cydUJILno3SFcuUTE0SjlvUUE1cSIsImNyZWF0ZWQiOjE1ODA5NjI0MDU2OTMsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNDU2Nzg5IiwiREVWSUNFX0lEIjo5MX0.IHpZU886LBfpHzp1Irn0qQNZd8j7ll9FgMC8Z6SNlGfb4_fuXzCmjtWRHqkgsYgXuN3_lpAV5et40cldXfUoDA\",\n        \"profile\": {\n            \"firstName\": null,\n            \"lastName\": null,\n            \"city\": null,\n            \"state\": null,\n            \"profileUrl\": null,\n            \"profileBio\": null,\n            \"userName\": null,\n            \"dob\": null\n        }\n    },\n    \"message\": \"Sign up successful !\",\n    \"timeStamp\": 1580962405877,\n    \"code\": 200,\n    \"errors\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "[Mobile] verify_initial_otp : Phone Number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"verificationKey\":\"6300d955-35c7-464a-a075-9a6789299e96\",\n\t\"otp\":\"4444\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/verify_initial_otp",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"verify_initial_otp"
+							]
+						},
+						"description": "This should be used after first screen to verify the otp of email or phone number\n\nOptional Field : (countryCode,phoneNumber) Or (email)\nMandatory Field : otp"
+					},
+					"response": [
+						{
+							"name": "verify_initial_otp : Verifying OTP, in response there is randomeKey in data that has to be passed in while calling sign up api",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4412345998\",\n\t\"email\":\"\",\n\t\"otp\":\"4444\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/verify_initial_otp",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"verify_initial_otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Jan 2020 19:01:47 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"755d2140-175e-429c-ab52-e4e006e34549\",\n    \"message\": \"verification.success\",\n    \"timeStamp\": 1579633307859,\n    \"code\": 200,\n    \"errors\": []\n}"
+						},
+						{
+							"name": "verify_initial_otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4412345888\",\n\t\"otp\":\"4444\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/verify_initial_otp",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"verify_initial_otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Feb 2020 17:14:33 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\"verificationKey\":\"bed1ddf4-ac7d-4eb7-b489-42d9d3259911\"},\n    \"message\": \"verification.success\",\n    \"timeStamp\": 1580922873860,\n    \"code\": 200,\n    \"errors\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "[Mobile] Verify Initial Otp : Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"verificationKey\":\"f659cbb3-b9a4-4c1c-b7b3-d400537dfbe6\",\n\t\"otp\":\"4444\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/verify_initial_otp",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"verify_initial_otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify Initial Otp : Email Verification",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\":\"sp.sendmail@gmail.com\",\n\t\"otp\":\"1481\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{url}}/iExpress/api/v1/verify_initial_otp",
+									"protocol": "http",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"iExpress",
+										"api",
+										"v1",
+										"verify_initial_otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, PUT, GET, OPTIONS, DELETE"
+								},
+								{
+									"key": "Access-Control-Max-Age",
+									"value": "3600"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Feb 2020 17:20:31 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\"verificationKey\":\"c8d8c995-205e-4f03-8ee2-e6212fdd3312\"},\n    \"message\": \"verification.success\",\n    \"timeStamp\": 1580923231330,\n    \"code\": 200,\n    \"errors\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "signin : Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"91anu.sandeep+4@gmail.com\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"WEB\",\n\t\"deviceToken\":\"11111\",\n\t\"inputType\":\"Email\"\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/signin",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin : Phone Number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4477779999\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"IOS\",\n\t\"deviceToken\":\"123278\",\n\t\"inputType\":\"Phone\"\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/signin",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"signin"
+					]
+				},
+				"description": "inputType : Email, Phone, FB, Twitter"
+			},
+			"response": [
+				{
+					"name": "signin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4412345678\",\n\t\"email\":\"sp.sendmail+1@gmail.com\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"IOS\",\n\t\"deviceToken\":\"1232\",\n\t\"inputType\":\"Email\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/signin",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 Jan 2020 19:40:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"userId\": 21,\n        \"email\": \"sp.sendmail+1@gmail.com\",\n        \"phoneNumber\": null,\n        \"authenticationHeader\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjIxLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ay9ieHFHNW9WQnhYYmh6cW95Q211TkhXLlI2R3ZMWlU5YU9tSmEvLnB6dElub0RGTFhkcSIsImNyZWF0ZWQiOjE1Nzg1MTI0NDQ3NjMsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNCIsIkRFVklDRV9JRCI6NTF9.33LxkFlW6ng5n9qm66jjbMmFBylbiIDYk8qq7ETegBXuoomYdApAkGo98sPbiB8TuS1e87UGusumoeYo5ePJvQ\",\n        \"profile\": {\n            \"firstName\": \"S\",\n            \"lastName\": \"y\",\n            \"city\": \"Rewa\",\n            \"state\": \"MP\",\n            \"profileUrl\": null,\n            \"profileBio\": null,\n            \"userName\": null,\n            \"dob\": \"25-12-1991\"\n        }\n    },\n    \"message\": \"Sign in successfull !\",\n    \"timeStamp\": 1578512444985,\n    \"code\": 200,\n    \"errors\": []\n}"
+				},
+				{
+					"name": "signin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4412345678\",\n\t\"email\":\"sp.sendmail+1@gmail.com\",\n\t\"password\":\"Test\",\n\t\"deviceType\":\"IOS\",\n\t\"deviceToken\":\"1232\",\n\t\"inputType\":\"Email\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/signin",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 Jan 2020 19:51:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"userId\": 21,\n        \"email\": \"sp.sendmail+1@gmail.com\",\n        \"phoneNumber\": null,\n        \"authenticationHeader\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjIxLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ay9ieHFHNW9WQnhYYmh6cW95Q211TkhXLlI2R3ZMWlU5YU9tSmEvLnB6dElub0RGTFhkcSIsImNyZWF0ZWQiOjE1Nzg1MTMwNjA4NzksIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNCIsIkRFVklDRV9JRCI6NTF9.Uhq8eRYq0OBrLIOCq47Up7cADnW8lFQJ5wg9y-l4yiVE30h6GyZIGSHUm1NZcr_UJzSqGzzWzZ9MKfjafchLQA\",\n        \"profile\": {\n            \"firstName\": \"S\",\n            \"lastName\": \"y\",\n            \"city\": \"Rewa\",\n            \"state\": \"MP\",\n            \"profileUrl\": \"https://dev-sandee-public-test.s3.ap-south-1.amazonaws.com/resource/c96bf622-2cd2-444a-aac3-0d4a0924e66e.jpg\",\n            \"profileBio\": null,\n            \"userName\": null,\n            \"dob\": \"25-12-1991\"\n        }\n    },\n    \"message\": \"Sign in successfull !\",\n    \"timeStamp\": 1578513061413,\n    \"code\": 200,\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjE0LCJhdWRpZW5jZSI6ImlFeHByZXNzIiwiY3JlYXRlZCI6MTU3ODQyNzMyODY3OCwiU0lOR0xFX1VTRVJfTE9HSU4iOiIxMjM0In0.XuFhEypPmX_2iVW8pHTBLy-mYdf23KQLs5dfjAi1GkwKBhPHT_zZLx7VmIndjeWMbIFxc0p8nSXPHPg2h4cDmw"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/logout",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify_otp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4477779999\",\n\t\"otp\":\"4444\"\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/verify_otp",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"verify_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verify_email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"91anu.sandeep+4@gmail.com\",\n\t\"otp\":\"4444\"\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/verify_otp",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"verify_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resend_otp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"countryCode\":\"91\",\n\t\"phoneNumber\":\"4481111112\",\n\t\"inputType\":\"Phone\",\n\t\"reasonOfResend\":\"ACCOUNT_VERIFICATION\"\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/resend_otp",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"resend_otp"
+					]
+				},
+				"description": "Possible values of reasonOfResend : RESET_PASSWORD,ACCOUNT_VERIFICATION\nWhen sending resend for account verification, value should be ACCOUNT_VERIFICATION\nWhen sending resend for resent password , value should be RESET_PASSWORD"
+			},
+			"response": []
+		},
+		{
+			"name": "resend_email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"sp.sendmail+9@gmail.com\",\n\t\"inputType\":\"Email\",\n\t\"reasonOfResend\":\"ACCOUNT_VERIFICATION\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/iExpress/api/v1/resend_email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"resend_email"
+					]
+				},
+				"description": "Possible values of reasonOfResend : RESET_PASSWORD,ACCOUNT_VERIFICATION When sending resend for account verification, value should be ACCOUNT_VERIFICATION When sending resend for resent password , value should be RESET_PASSWORD"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Password",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI0IiwiYXVkaWVuY2UiOiJpRXhwcmVzcyIsImNyZWF0ZWQiOjE1NzcxNjM2ODc4OTQsIlNJTkdMRV9VU0VSX0xPR0lOIjoiOTk5OTEifQ.3O8iXjBtwu990WmRy5DIsA21qDC800a_5naue6AXwHSMxYEuv7x4u5zk1mYWv_3WRVXDhU-np1onNUqkWYqJ_Q"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"currentPassword\":\"Test\",\n\t\"newPassword\":\"Test\",\n\t\"confirmPassword\":\"Test\"\n}"
+				},
+				"url": {
+					"raw": "http://35.154.241.173:8080/iExpress/api/v1/password",
+					"protocol": "http",
+					"host": [
+						"35",
+						"154",
+						"241",
+						"173"
+					],
+					"port": "8080",
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"newPassword\":\"Test\",\n\t\"confirmPassword\":\"Test\",\n\t\"verificationToken\":\"123124\",\n\t\"verificationOtp\":\"123\",\n\t\"inputType\":\"Phone\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/iExpress/api/v1/password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Image Upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEzLCJhdWRpZW5jZSI6ImlFeHByZXNzIiwiY3JlYXRlZCI6MTU3ODQyNTM3Nzg1NCwiU0lOR0xFX1VTRVJfTE9HSU4iOiIxMjM0In0.LxATN747Lp-QjuzOIz521BMvAPTZ7uzG7CMLjn1yBtqK99lZ3Njc7SUsegVfuHzNk3eheF2IW-T8M8RvgAX8w"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "resource",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "belongs_to",
+							"value": "PROFILE_PHOTO",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/resource",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"resource"
+					]
+				},
+				"description": "belongs_to = PROFILE_PHOTO | PROFILE_ALBUM | POST | COMMENT"
+			},
+			"response": [
+				{
+					"name": "Image Upload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authHeader",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiYXVkaWVuY2UiOiJpRXhwcmVzcyIsImNyZWF0ZWQiOjE1Nzc5ODY5OTAwODQsIlNJTkdMRV9VU0VSX0xPR0lOIjoiOTk5OTEifQ.9n-CPrm4n_vu181bZVb8Z5XGm2Er-On46yGJaRn-NWsCvdQ5jaLoHc7dMM5EyVZ84a8mc8JMnkwbJuJAjoA-GQ",
+								"warning": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"warning": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "resource",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "belongs_to",
+									"value": "PROFILE_PHOTO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/iExpress/api/v1/resource",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"resource"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"name": "cache-control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json",
+							"name": "content-type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "date",
+							"value": "Thu, 02 Jan 2020 18:32:46 GMT",
+							"name": "date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "expires",
+							"value": "0",
+							"name": "expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "pragma",
+							"value": "no-cache",
+							"name": "pragma",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"name": "transfer-encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"name": "x-content-type-options",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY",
+							"name": "x-frame-options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"name": "x-xss-protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"body": "{\"data\":{\"resourceId\":4,\"resourceUrl\":\"https://dev-sandee-public-test.s3.ap-south-1.amazonaws.com/resource/bee22bf2-49da-4fa4-ae2d-73e8719f1b9d.jpg\",\"resourceType\":\"IMAGE\",\"belongsTo\":\"PROFILE_PHOTO\"},\"message\":\"Resource uploaded successfully\",\"timeStamp\":1577989966551,\"code\":\"200\",\"errors\":[]}"
+				}
+			]
+		},
+		{
+			"name": "Set Profile Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjgyLCJhdWRpZW5jZSI6IiQyYSQxMCQ4alY5OWUyaG1yVk5vSnpTeUVNazd1QmxBdUtpRUxSaWxiMHpWZ0NDUTc1ZFhKcTVVSktjUyIsImNyZWF0ZWQiOjE1ODczMTE2Mjc1MTIsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNDU2Nzg5IiwiREVWSUNFX0lEIjoyOTV9.8pAsNoBVFrpVs4P32jv1wA4PXSpQPZJMBvY5Dr2VBKEx2sO2FLaHxnqG5dHAMlZfUpvE-BqfctDXq-zt_CwNMw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\" : \"44\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/profile/image",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"profile",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "state listing",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authToken",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/state?key=Ram",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"state"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "Ram"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "city listing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/city?key=",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"city"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Listing By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEwMiwiYXVkaWVuY2UiOiIkMmEkMTAkS1dhak5ibjU0eG0za2doaFZyN1VxLmJ0ODFLbjFOZENDb3RMT2Qwd21CMDJMeFJudUN4ejIiLCJjcmVhdGVkIjoxNTk1NDMyODc0MjYwLCJTSU5HTEVfVVNFUl9MT0dJTiI6IjEyMzQ1Njc4OSIsIkRFVklDRV9JRCI6MzQ1fQ.0pXaczo0tiMibu3CNuXmgVIe2ZrrizLXnvDEGZypsSZbpmZMnBhvXB1umQ5MTZmFTGdMSDBW5GaKlc-bFcDXQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/user/102",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"user",
+						"102"
+					]
+				},
+				"description": "http://{{url}}/iExpress/api/v1/user/1"
+			},
+			"response": [
+				{
+					"name": "User Listing By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/user/21",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"user",
+								"21"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 Jan 2020 19:53:05 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"userId\": 21,\n        \"email\": \"sp.sendmail+1@gmail.com\",\n        \"phoneNumber\": null,\n        \"authenticationHeader\": null,\n        \"profile\": {\n            \"firstName\": \"S\",\n            \"lastName\": \"y\",\n            \"city\": \"Rewa\",\n            \"state\": \"MP\",\n            \"profileUrl\": \"https://dev-sandee-public-test.s3.ap-south-1.amazonaws.com/resource/6ed80d57-e992-44e4-80ce-fd08d94d695a.jpg\",\n            \"profileBio\": null,\n            \"userName\": null,\n            \"dob\": \"25-12-1991\"\n        }\n    },\n    \"message\": \"Resource uploaded successfully\",\n    \"timeStamp\": 1578513185410,\n    \"code\": 200,\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Profile Create ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEwMiwiYXVkaWVuY2UiOiIkMmEkMTAkS1dhak5ibjU0eG0za2doaFZyN1VxLmJ0ODFLbjFOZENDb3RMT2Qwd21CMDJMeFJudUN4ejIiLCJjcmVhdGVkIjoxNTk1NDMyODc0MjYwLCJTSU5HTEVfVVNFUl9MT0dJTiI6IjEyMzQ1Njc4OSIsIkRFVklDRV9JRCI6MzQ1fQ.0pXaczo0tiMibu3CNuXmgVIe2ZrrizLXnvDEGZypsSZbpmZMnBhvXB1umQ5MTZmFTGdMSDBW5GaKlc-bFcDXQg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"Sandeep\",\n\t\"lastName\":\"Pandey\",\n\t\"cityId\":\"753\",\n\t\"city\":\"IncasecityIdisnotPresent\",\n\t\"stateId\":\"1\",\n\t\"state\":\"IncasecityIdnotpresent\",\n\t\"dob\":\"04-03-1991\",\n\t\"userName\":\"AS\",\n\t\"profileBio\":\"This is test\",\n\t\"lat\": 13.98,\n\t\"lon\":11.11\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/profile",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Profile Create ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authHeader",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjIxLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ay9ieHFHNW9WQnhYYmh6cW95Q211TkhXLlI2R3ZMWlU5YU9tSmEvLnB6dElub0RGTFhkcSIsImNyZWF0ZWQiOjE1Nzg1MTMwNjA4NzksIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNCIsIkRFVklDRV9JRCI6NTF9.Uhq8eRYq0OBrLIOCq47Up7cADnW8lFQJ5wg9y-l4yiVE30h6GyZIGSHUm1NZcr_UJzSqGzzWzZ9MKfjafchLQA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\":\"Sandeep\",\n\t\"lastName\":\"Pandey\",\n\t\"cityId\":\"753\",\n\t\"city\":\"IncasecityIdisnotPresent\",\n\t\"state\":\"IncasecityIdnotpresent\",\n\t\"dob\":\"04-03-1991\",\n\t\"userName\":\"AS\"\n}"
+						},
+						"url": {
+							"raw": "http://{{url}}/iExpress/api/v1/profile",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"iExpress",
+								"api",
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST, PUT, GET, OPTIONS, DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "contentType,Content-Type,X-Requested-With,accept,Origin,authtoken,deviceId,authHeader"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 08 Jan 2020 20:05:46 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"userId\": 21,\n        \"email\": \"sp.sendmail+1@gmail.com\",\n        \"phoneNumber\": null,\n        \"authenticationHeader\": null,\n        \"profile\": {\n            \"firstName\": \"Sandeep\",\n            \"lastName\": \"Pandey\",\n            \"city\": \"Rewa\",\n            \"state\": \"Madhya Pradesh\",\n            \"profileUrl\": \"https://dev-sandee-public-test.s3.ap-south-1.amazonaws.com/resource/6ed80d57-e992-44e4-80ce-fd08d94d695a.jpg\",\n            \"profileBio\": null,\n            \"userName\": \"AS\",\n            \"dob\": \"04-03-1991\"\n        }\n    },\n    \"message\": \"Resource uploaded successfully\",\n    \"timeStamp\": 1578513946027,\n    \"code\": 200,\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Is email exist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/email?email=sp.sendmail@gmail.com",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"email"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "sp.sendmail@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Is phoneNumber exist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/phoneNumber?phoneNumber=4481111122",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"phoneNumber"
+					],
+					"query": [
+						{
+							"key": "phoneNumber",
+							"value": "4481111122"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEwMiwiYXVkaWVuY2UiOiIkMmEkMTAkS1dhak5ibjU0eG0za2doaFZyN1VxLmJ0ODFLbjFOZENDb3RMT2Qwd21CMDJMeFJudUN4ejIiLCJjcmVhdGVkIjoxNTk1NDMyODc0MjYwLCJTSU5HTEVfVVNFUl9MT0dJTiI6IjEyMzQ1Njc4OSIsIkRFVklDRV9JRCI6MzQ1fQ.0pXaczo0tiMibu3CNuXmgVIe2ZrrizLXnvDEGZypsSZbpmZMnBhvXB1umQ5MTZmFTGdMSDBW5GaKlc-bFcDXQg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\":\"Shri Hari\",\n\t\"resourceIds\":[],\n\t\"readerUserId\":1,\n\t\"readerUserFirstName\":\"S4\",\n\t\"readerUserLastName\":\"P4\",\n\t\"qIds\":[],\n\t\"status\":\"DRAFT\"\n\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/post",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"post"
+					]
+				},
+				"description": "To be used to create post \n    Mandatory field is content , rest are optional.\n    Created Post can't be public"
+			},
+			"response": []
+		},
+		{
+			"name": "update users location",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjIxLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ay9ieHFHNW9WQnhYYmh6cW95Q211TkhXLlI2R3ZMWlU5YU9tSmEvLnB6dElub0RGTFhkcSIsImNyZWF0ZWQiOjE1ODE5NjgyODA0NTUsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzMiIsIkRFVklDRV9JRCI6ODl9.kI7UA-Co0oE2Jqd5JesRbPTheTteLSccQcN-wD1cs3mUNlqzlczJKcxETHwyVHdAXKzXuqH6x8taXiAfyloKyQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lat\":12.11,\n\t\"lon\":11.11\n}"
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/location",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list of user's post by user id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEwMywiYXVkaWVuY2UiOiIkMmEkMTAkNWQyeVIzSGtXNUNKbnVNb0k2R05HLnBrOGtaZzJuWS5keEtESVR0RHR4bkxnNWhMa3ZsVXEiLCJjcmVhdGVkIjoxNjAxMTgyNjc5MDM0LCJTSU5HTEVfVVNFUl9MT0dJTiI6IjEyMzQ1Njc4OSIsIkRFVklDRV9JRCI6MzQ2fQ.X-RpgE-Qus6qa63R19tgF7fX5flVC_NFh9_Yj5kvY9CluXZilMHD8pzaF1eW7ZWr_NZdRgYH9WGFkNlYfv1k-g",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/user/103/post?page=1&size=2&key=&status=all",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"user",
+						"103",
+						"post"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						},
+						{
+							"key": "key",
+							"value": "",
+							"description": "Field Mandatory, value could be empty"
+						},
+						{
+							"key": "status",
+							"value": "all",
+							"description": "PUBLISHED, DRAFT, all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjgyLCJhdWRpZW5jZSI6IiQyYSQxMCQ4alY5OWUyaG1yVk5vSnpTeUVNazd1QmxBdUtpRUxSaWxiMHpWZ0NDUTc1ZFhKcTVVSktjUyIsImNyZWF0ZWQiOjE1ODczMTE2Mjc1MTIsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNDU2Nzg5IiwiREVWSUNFX0lEIjoyOTV9.8pAsNoBVFrpVs4P32jv1wA4PXSpQPZJMBvY5Dr2VBKEx2sO2FLaHxnqG5dHAMlZfUpvE-BqfctDXq-zt_CwNMw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"postId\":16,\n\t\"content\":\"This is fortest again updated\",\n\t\"resourceIds\":[\"41\"],\n\t\"readerUserId\":5,\n\t\"readerUserFirstName\":\"SA\",\n\t\"readerUserLastName\":\"PS\",\n\t\"questionIds\":[15],\n\t\"status\":\"PUBLISH\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/post",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Question Answer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "authHeader",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjEwMSwiYXVkaWVuY2UiOiIkMmEkMTAkcmROQkdKWWwzbGViR3ZrLlE2S0NHdXAybVVkYWUwYXZEeE1yY3hJZi9CU2JFSzRnQUoxMXUiLCJjcmVhdGVkIjoxNTk0NTIzMzUwNTEwLCJTSU5HTEVfVVNFUl9MT0dJTiI6IjEyMzQ1Njc4OTkiLCJERVZJQ0VfSUQiOjM0Mn0.cy1QWIXldfkbSglI6aUfeV7dyM1ggjy4cfbTsyc-aaaE6j51LaVDTCfRcYrp9EqM2KUs0qlGp0Hhj-qpTLt6_g"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questions\":\n\t\t[\n\t\t\t{\n   \t\t\t\t\"question\":\"where did we meet\",\n\t\t\t\t\"answers\": [\"JNCT\",\"JAWAHAR LAL NEHRU\"]\n\t\t\t},\n\t\t\t{\n   \t\t\t\t\"question\":\"what was your bracnh\",\n\t\t\t\t\"answers\": [\"IT\",\"Information Technology\"]\n\t\t\t}\n\t\t],\n\t\"postId\":38\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/question/",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"question",
+						""
+					]
+				},
+				"description": "Answers : can be as many as one want\npostId : it is optional [0 should be sent when there is no post]"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Question",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjIxLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ay9ieHFHNW9WQnhYYmh6cW95Q211TkhXLlI2R3ZMWlU5YU9tSmEvLnB6dElub0RGTFhkcSIsImNyZWF0ZWQiOjE1ODcwNjQyNTg1NzMsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzMiIsIkRFVklDRV9JRCI6MjQ1fQ.eh3Jv_xDs_yy0AAmaf8xeJgA01NZcBkzi4AfuyqrCDNyCiI7LEZVfL_GW4zAliwkMaHG0AGwTME9kV9uLt5NUg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questions\":\n\t\t[\n\t\t\t{\n\t\t\t\t\"questionId\":1,\n   \t\t\t\t\"question\":\"where did we meet first\",\n\t\t\t\t\"answers\": [\"JNCT\",\"JAWAHAR LAL NEHRU College of technology\"]\n\t\t\t}\n\t\t],\n\t\"postId\":16\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/question/",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"question",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete multiple question at time",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjIxLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ay9ieHFHNW9WQnhYYmh6cW95Q211TkhXLlI2R3ZMWlU5YU9tSmEvLnB6dElub0RGTFhkcSIsImNyZWF0ZWQiOjE1ODcwNjQyNTg1NzMsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzMiIsIkRFVklDRV9JRCI6MjQ1fQ.eh3Jv_xDs_yy0AAmaf8xeJgA01NZcBkzi4AfuyqrCDNyCiI7LEZVfL_GW4zAliwkMaHG0AGwTME9kV9uLt5NUg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionIds\":[2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/question/",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"question",
+						""
+					]
+				},
+				"description": "Delete multiple question at time"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authHeader",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjMxLCJhdWRpZW5jZSI6IiQyYSQxMCRvVGxBWlNvdHhPZ0dYQ0R0ZmY5Y2xPMUdIOC4yVHB4NUVVWW1lcExHQUpnOUtTbDQwNjEueSIsImNyZWF0ZWQiOjE1ODk2NTk5OTY4MjksIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzMjc4IiwiREVWSUNFX0lEIjozMjV9.1b4kw01otWpJVhFBHkqkV5eU2Dyncj_OkgE2qImtrs2gSVUN6-qqGmrOz2lcBYACm0G0eNac_Nektnsi7HzOBg"
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/post/23",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"post",
+						"23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delink  multiple Questions",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "authHeader",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjIxLCJhdWRpZW5jZSI6IiQyYSQxMCQ3ay9ieHFHNW9WQnhYYmh6cW95Q211TkhXLlI2R3ZMWlU5YU9tSmEvLnB6dElub0RGTFhkcSIsImNyZWF0ZWQiOjE1ODcwNjQyNTg1NzMsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzMiIsIkRFVklDRV9JRCI6MjQ1fQ.eh3Jv_xDs_yy0AAmaf8xeJgA01NZcBkzi4AfuyqrCDNyCiI7LEZVfL_GW4zAliwkMaHG0AGwTME9kV9uLt5NUg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questionIds\":[7]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/question/delink/",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"question",
+						"delink",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delink question",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authHeader",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjgyLCJhdWRpZW5jZSI6IiQyYSQxMCQ4alY5OWUyaG1yVk5vSnpTeUVNazd1QmxBdUtpRUxSaWxiMHpWZ0NDUTc1ZFhKcTVVSktjUyIsImNyZWF0ZWQiOjE1ODczMTE2Mjc1MTIsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNDU2Nzg5IiwiREVWSUNFX0lEIjoyOTV9.8pAsNoBVFrpVs4P32jv1wA4PXSpQPZJMBvY5Dr2VBKEx2sO2FLaHxnqG5dHAMlZfUpvE-BqfctDXq-zt_CwNMw"
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/question/11/delink/",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"question",
+						"11",
+						"delink",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Post by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjgyLCJhdWRpZW5jZSI6IiQyYSQxMCQ4alY5OWUyaG1yVk5vSnpTeUVNazd1QmxBdUtpRUxSaWxiMHpWZ0NDUTc1ZFhKcTVVSktjUyIsImNyZWF0ZWQiOjE1ODczMTE2Mjc1MTIsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzNDU2Nzg5IiwiREVWSUNFX0lEIjoyOTV9.8pAsNoBVFrpVs4P32jv1wA4PXSpQPZJMBvY5Dr2VBKEx2sO2FLaHxnqG5dHAMlZfUpvE-BqfctDXq-zt_CwNMw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/user/21/post/16",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"user",
+						"21",
+						"post",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjgzLCJhdWRpZW5jZSI6IiQyYSQxMCRRSi94QnRGWU52eEwyRFFGV254cGJlbmVxTldVQ2ViZmpISEdpSkZzZHlvWS9PMHltVnRGcSIsImNyZWF0ZWQiOjE2MDExODMyODAxNDAsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTExMTExMTExIiwiREVWSUNFX0lEIjoyOTZ9.8R2THlkKjTe-PfLISKk9nNcuThoTjqXDmbOopw1fgwbSis4LKKKZxmf0_2TOhE67Q8-Nv0UXlX1UgLnilCm38g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/users/?page=0&size=0&key=Sandeep",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"description": "Use 0 for all result"
+						},
+						{
+							"key": "size",
+							"value": "0",
+							"description": "Use 0 for all result along with page 0"
+						},
+						{
+							"key": "key",
+							"value": "Sandeep"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reading others profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjgzLCJhdWRpZW5jZSI6IiQyYSQxMCRRSi94QnRGWU52eEwyRFFGV254cGJlbmVxTldVQ2ViZmpISEdpSkZzZHlvWS9PMHltVnRGcSIsImNyZWF0ZWQiOjE2MDExODMyODAxNDAsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTExMTExMTExIiwiREVWSUNFX0lEIjoyOTZ9.8R2THlkKjTe-PfLISKk9nNcuThoTjqXDmbOopw1fgwbSis4LKKKZxmf0_2TOhE67Q8-Nv0UXlX1UgLnilCm38g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/user/82/read",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"user",
+						"82",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Answer to post and view post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "authHeader",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjgzLCJhdWRpZW5jZSI6IiQyYSQxMCRRSi94QnRGWU52eEwyRFFGV254cGJlbmVxTldVQ2ViZmpISEdpSkZzZHlvWS9PMHltVnRGcSIsImNyZWF0ZWQiOjE1OTAxNjA3NDM5NjUsIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTExMTExMTExIiwiREVWSUNFX0lEIjoyOTZ9.JtzZR9k68molcuYg3ueDbBLgJvWgJzTpRNp0fHM1AtbihuNcoZ1GS8tkQk58F2qW7uYpweZzDQtFH0IBSld80g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"questions\":\n\t\t[\n\t\t\t{\n   \t\t\t\t\"questionId\":12,\n\t\t\t\t\"answer\": \"IT\"\n\t\t\t}\n\t\t],\n\t\"postId\":21\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/post/21/answer",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"post",
+						"21",
+						"answer"
+					]
+				},
+				"description": "User first submits the answer and if answer are correct then post is shown"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete question by question id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authHeader",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOjMxLCJhdWRpZW5jZSI6IiQyYSQxMCRvVGxBWlNvdHhPZ0dYQ0R0ZmY5Y2xPMUdIOC4yVHB4NUVVWW1lcExHQUpnOUtTbDQwNjEueSIsImNyZWF0ZWQiOjE1ODk2NTk5OTY4MjksIlNJTkdMRV9VU0VSX0xPR0lOIjoiMTIzMjc4IiwiREVWSUNFX0lEIjozMjV9.1b4kw01otWpJVhFBHkqkV5eU2Dyncj_OkgE2qImtrs2gSVUN6-qqGmrOz2lcBYACm0G0eNac_Nektnsi7HzOBg"
+					}
+				],
+				"url": {
+					"raw": "http://{{url}}/iExpress/api/v1/question/23",
+					"protocol": "http",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"iExpress",
+						"api",
+						"v1",
+						"question",
+						"23"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
