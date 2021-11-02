@@ -20,6 +20,10 @@ pipeline {
      
      
         }
+        stage ('copy') {
+            steps {
+                echo "radhe radhey"
+                scp -i singapurkey.pem  radhey ec2-user@54.255.223.23:/home/ec2-user/
     
         stage ('deploy'){
         steps {
