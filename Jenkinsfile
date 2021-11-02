@@ -30,13 +30,7 @@ pipeline {
     
         stage ('deploy'){
         steps {
-             archiveArtifacts artifacts: 'target/*.war', followSymlinks: true
-            copyArtifacts fingerprintArtifacts: true, projectName: 'build', selector: lastSuccessful()
-            
-           deploy adapters: [tomcat8(credentialsId: '945dc348-75c7-4b0c-8f59-452968106c46', path: '', url: 'http://54.255.223.23:8080/')], contextPath: 'iExpress-0.0.1-SNAPSHOT' , war: '**/*.war'
-            
-    
-    }
+           sh 'scp -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@3.1.217.84:/opt/apache-tomcat-8.5.72/webapps/'
     
     
 }
