@@ -31,7 +31,7 @@ pipeline {
         stage ('deploy'){
         steps {
            sh 'scp -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@3.1.217.84:/opt/apache-tomcat-8.5.72/webapps/'
-    
+        }
     
 }
 }
