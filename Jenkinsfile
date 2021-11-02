@@ -21,7 +21,7 @@ pipeline {
      
         }
     
-   stage ('deploy')
+        stage ('deploy'){
         steps {
              archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
             copyArtifacts fingerprintArtifacts: true, projectName: 'build', selector: lastSuccessful()
