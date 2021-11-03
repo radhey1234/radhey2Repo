@@ -24,13 +24,13 @@ pipeline {
         stage ('copy') {
             steps {
                 echo "radhe radhey"
-               sh 'scp -i singapurkey.pem radhey ec2-user@3.1.217.84:/home/ec2-user/'
+               sh 'scp -i singapurkey.pem radhey ec2-user@18.140.2.227:/home/ec2-user/'
                     }
         }
     
         stage ('deploy'){
         steps {
-           sh 'scp -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@3.1.217.84:/opt/apache-tomcat-8.5.72/webapps/'
+           sh 'scp -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@18.140.2.227:/opt/apache-tomcat-8.5.72/webapps/'
         }
     
 }
