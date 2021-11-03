@@ -24,7 +24,7 @@ pipeline {
         stage ('copy') {
             steps {
                 echo "radhe radhey"
-               sh 'scp -i singapurkey.pem radhey ec2-user@18.140.2.227:/home/ec2-user/'
+               sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem radhey ec2-user@18.140.2.227:/home/ec2-user/'
                     }
         }
     
