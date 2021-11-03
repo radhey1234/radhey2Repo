@@ -31,7 +31,7 @@ pipeline {
         stage ('deploy'){
         steps {
             sh 'ssh -i 
-               sh 'ssh -i  singapurkey.pem ec2-user@18.140.2.227
+               sh 'ssh -i  singapurkey.pem ec2-user@18.140.2.227'
            sh 'kill -9 $(lsof -t -i:8080)'
             sh 'starttomcat'
            sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@18.140.2.227:/opt/apache-tomcat-8.5.72/webapps/'
