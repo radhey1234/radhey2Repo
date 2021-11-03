@@ -30,7 +30,7 @@ pipeline {
     
         stage ('deploy'){
         steps {
-           sh 'scp -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@18.140.2.227:/opt/apache-tomcat-8.5.72/webapps/'
+           sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@18.140.2.227:/opt/apache-tomcat-8.5.72/webapps/'
         }
     
 }
