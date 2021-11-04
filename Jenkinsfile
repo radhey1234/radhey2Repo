@@ -32,7 +32,10 @@ pipeline {
         steps {
             
            sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@13.229.201.1:/opt/apache-tomcat-8.5.72/webapps/'
-                  
+            sh """
+            ssh -i singapurkey.pem ec2-user@13.229.201.1
+            /opt/starttomcat
+            """
         }
     
 }
