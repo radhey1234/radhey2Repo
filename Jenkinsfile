@@ -16,11 +16,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
-            sh 'ssh -i singapurkey.pem ec2-user@18.140.2.227'
-           sh 'kill -9 $(lsof -t -i:8080)'
-            sh 'starttomcat'
-           sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@18.140.2.227:/opt/apache-tomcat-8.5.72/webapps/'
-
+          
             }
      
      
@@ -28,17 +24,17 @@ pipeline {
         stage ('copy') {
             steps {
                 echo "radhe radhey"
-               sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem radhey ec2-user@18.140.2.227:/home/ec2-user/'
+               sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem radhey ec2-user@54.169.153.161:/home/ec2-user/'
                     }
         }
     
         stage ('deploy'){
         steps {
            
-           sh 'ssh -i singapurkey.pem ec2-user@18.140.2.227'
-           sh 'kill -9 $(lsof -t -i:8080)'
-            sh 'starttomcat'
-           sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@18.140.2.227:/opt/apache-tomcat-8.5.72/webapps/'
+           sh 'ssh -i singapurkey.pem ec2-user@54.169.153.161:/home/ec2-user/shutdowntomcat
+           sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@54.169.153.161:/opt/apache-tomcat-8.5.72/webapps/'
+           sh 'ssh -i singapurkey.pem ec2-user@54.169.153.161:/home/ec2-user/shutdowntomcat'
+            sh 'ssh -i singapurkey.pem ec2-user@54.169.153.161:/home/ec2-user/starttomcat'
         }
     
 }
