@@ -39,6 +39,22 @@ pipeline {
         }
     
 }
+         stage('Build Image') {
+             steps {
+                 script {
+                     sshagent(['f3283119-b670-4115-a930-c441abb9909d']) {
+    // some block
+}
+                     {
+                        sh "echo pwd"
+                        sh 'ssh -t -t jenkins@3.0.92.136 -o StrictHostKeyChecking=no'
+                        sh "echo pwd"
+                        sh 'sudo -i -u root'
+                        sh 'cd /opt/'
+                        sh 'echo pwd'
+                    }
+                 }
+             }
     
 }
 }
