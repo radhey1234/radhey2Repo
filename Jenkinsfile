@@ -33,8 +33,8 @@ pipeline {
            
            sh 'ssh -i singapurkey.pem ec2-user@54.169.153.161:/home/ec2-user/shutdowntomcat
            sh 'scp -o StrictHostKeyChecking=no -i singapurkey.pem target/iExpress-0.0.1-SNAPSHOT.war  ec2-user@54.169.153.161:/opt/apache-tomcat-8.5.72/webapps/'
-           sh 'ssh -i singapurkey.pem ec2-user@54.169.153.161:/home/ec2-user/shutdowntomcat'
-            sh 'ssh -i singapurkey.pem ec2-user@54.169.153.161:/home/ec2-user/starttomcat'
+           sh 'ssh -i singapurkey.pem ec2-user@54.169.153.161
+           sh 'starttomcat'
         }
     
 }
