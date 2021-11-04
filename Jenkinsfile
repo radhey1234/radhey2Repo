@@ -44,15 +44,6 @@ pipeline {
         }
     
 }
-        stage ('command') {
-            sshagent(['f3283119-b670-4115-a930-c441abb9909d']) {
-    // some block
-               sh """
-               ssh ec2-user@13.229.201.1 /opt/starttomcat
-
-             """
-}
-
-}
+    
 }
 }
