@@ -47,7 +47,7 @@ pipeline {
 }
                      
                         sh "echo pwd"
-                        sh 'ssh -i  singapurkey.pem jenkins@3.0.92.136 
+                        sh 'ssh -i  singapurkey.pem jenkins@3.0.92.136' 
                         sh "echo pwd"
                         sh 'sudo -i -u root'
                         sh 'cd /opt/'
