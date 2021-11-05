@@ -51,6 +51,15 @@ pipeline {
                  }
              }
     
+        stage('copy jenkins'){
+        steps {
+            sh """
+            sh 'sudo -Hu ec2-user ssh jenkins@3.1.201.220 /opt/apache-tomcat-8.5.72/shutdowntomcat
+            
+"""
+        }
+        }
 }
+
 }
 
