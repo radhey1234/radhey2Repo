@@ -42,10 +42,10 @@ pipeline {
          stage('Build Image') {
              steps {
                  script {                    
-                        ssh jenkins@3.1.201.220 ls
-                        ssh jenkins@3.1.201.220 rm -rf /home/jenkins/test
-                        ssh jenkins@3.1.201.220 ls
-                        sh "echo pwd"
+                      sh 'ssh jenkins@3.1.201.220 ls'
+                      sh 'ssh jenkins@3.1.201.220 rm -rf /home/jenkins/test'
+                      sh 'ssh jenkins@3.1.201.220 ls'
+                      sh "echo pwd"
                     }
                  }
              }
