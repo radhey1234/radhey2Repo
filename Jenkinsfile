@@ -42,9 +42,9 @@ pipeline {
          stage('Build Image') {
              steps {
                  script {                    
-                      sh 'ssh -i singapurkey.pem jenkins@3.1.201.220 ls'
-                      sh 'ssh -i singapurkey.pem jenkins@3.1.201.220 rm -rf /home/jenkins/test'
-                      sh 'ssh -i singapurkey.pem jenkins@3.1.201.220 ls'
+                      sh 'ssh jenkins@3.1.201.220 ls'
+                      sh 'ssh jenkins@3.1.201.220 rm -rf /home/jenkins/test'
+                      sh 'ssh jenkins@3.1.201.220 ls'
                       sh "echo pwd"
                     }
                  }
